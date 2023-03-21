@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //criar uma tabela
-const todoSchema = new mongoose.Schema({
+const TodoItemSchema = new mongoose.Schema({
     item: {
         type: String,
         required: true
@@ -10,4 +10,4 @@ const todoSchema = new mongoose.Schema({
 });
 
 //exportar o modelo
-module.exports = mongoose.model('todo', todoSchema);
+module.exports = mongoose.model('todo', TodoItemSchema);
