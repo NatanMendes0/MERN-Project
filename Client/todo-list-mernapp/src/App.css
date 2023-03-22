@@ -80,3 +80,26 @@
   background-color: #ff0000;
   color: #fff;
 }
+
+.update-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.update-new-input{
+  padding: 8px;
+  width: 77%;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  padding: 8px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.update-new-btn{
+  background-color: darkorchid;
+  color: #fff;
+  cursor: pointer;
+}

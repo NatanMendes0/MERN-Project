@@ -9,10 +9,9 @@ router.post("/api/item", async (req, res) => {
     const newItem = new todoItemsModel({
       item: req.body.item,
     });
-
     //salvar item no mongodb
     const saveItem = await newItem.save();
-    res.status(200).json("Item adicionado com sucesso!");
+    res.status(200).json(saveItem);
   } catch (err) {
     res.json(err);
   }
@@ -45,6 +44,7 @@ router.delete("/api/item/:id", async (req, res) => {
   try {
     //procurar item pelo id e deletar
     const deleteItem = await todoItemsModel.findByIdAndDelete(req.params.id);
+    res.status(200).json("Item deletado com sucesso!");
   } catch (err) {
     res.json(err);
   }
