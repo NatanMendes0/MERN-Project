@@ -34,6 +34,7 @@ router.put("/api/item/:id", async (req, res) => {
     const updateItem = await todoItemsModel.findByIdAndUpdate(req.params.id, {
       $set: req.body,
     });
+    res.status(200).json("Item atualizado com sucesso!");
   } catch (err) {
     res.json(err);
   }
