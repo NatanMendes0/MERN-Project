@@ -14,6 +14,9 @@ function App() {
   //variavel para mostrar o form de atualização
   const [isUpdating, setIsUpdating] = useState("");
 
+  //variavel para armazenar o id do item que está sendo atualizado
+  const [updateItemText, setUpdateItemText] = useState("");
+
   //adicionar novo item no banco de dados
   const addItem = async (e) => {
     e.preventDefault();
@@ -53,10 +56,23 @@ function App() {
   };
 
   //função para atualizar um item do banco de dados
-  //lembrar que antes de atualizar, tem que pegar o valor do item e colocar no input
+  const updateItem = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.put(`http://localhost:5500/api/item/${isUpdating}`, {	item: updateItemText});
+      console.log(res.data);
+      const updatedItemIndex = listItems.findIndex((item) => item._id === isUpdating);
+      const updatedItem = listItems[updatedItemIndex].item = updateItemText;
+      setUpdateItemText("");
+      setIsUpdating("");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  //antes de atualizar, renderizar o form de atualização
   const renderUpdateForm = () => (
-    <form className="update-form">
-      <input className="update-new-input" type="text" placeholder="Novo Item"/>
+    <form className="update-form" onSubmit={(e)=>{updateItem(e)}}>
+      <input className="update-new-input" type="text" placeholder="Novo Item" onChange={e=>{setUpdateItemText(e.target.value)}} value={updateItemText} />
       <button className="update-new-btn" type="submit">Atualizar</button>
     </form>
   )
