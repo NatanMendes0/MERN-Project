@@ -39,4 +39,43 @@
   border: none;
   border-radius: 6px;
   padding: 10px;
+  cursor: pointer;
+}
+
+.todo-listItems{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-item{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-item button:focus{
+  outline: none;
+}
+
+.item-content{
+  width: 60%;
+}
+
+.todo-item button{
+  border: none;
+  border-radius:6px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.update-item{
+  background-color: #008080;
+  color: #fff;
+}
+
+.delete-item{
+  background-color: #ff0000;
+  color: #fff;
 }

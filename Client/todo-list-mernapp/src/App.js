@@ -9,12 +9,21 @@ function App() {
         <button type="submit">Adicionar</button>
       </form>
       <div className="todo-listItems">
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          
-        </ul>    
+        <div className="todo-item">
+          <p className="item-content">Tarefa 1</p>
+          <button className="update-item">Update</button>
+          <button className="delete-item">Delete</button>
+        </div>
+        <div className="todo-item">
+          <p className="item-content">Tarefa 2</p>
+          <button className="update-item">Update</button>
+          <button className="delete-item">Delete</button>
+        </div>
+        <div className="todo-item">
+          <p className="item-content">Tarefa 3</p>
+          <button className="update-item">Update</button>
+          <button className="delete-item">Delete</button>
+        </div>
       </div>
     </div>
   );
