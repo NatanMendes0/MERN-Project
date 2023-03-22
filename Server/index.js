@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
+const cors = require("cors");
 
 const app = express();
 
@@ -9,6 +10,9 @@ app.use(express.json());
 
 //importar porta
 const PORT = process.env.PORT || 5500;
+
+//importar cors para poder acessar o servidor
+app.use(cors());
 
 //importar rotas
 const TodoItemRoute = require("./routes/todoItems");
